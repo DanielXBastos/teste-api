@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="ui-g-12">
+    <div class="card">
+      <h5 class="card-header">Pacotes de Viagem</h5>
+      <div class="card-body">
+        <p-carousel [value]="cheapPacks" [numVisible]="3" class="carousel">
+          <ng-template let-pack pTemplate="item">
+            <div style="position: relative;cursor: pointer;">
+              <img [src]="pack.imageUrl" style="border-radius: 0.5em;width: -webkit-fill-available;">
+              <div class="pack-footer flex-between">
+                <div>
+                  {{findCityByIataCode(pack.arrivalAirport)}} <br> {{getBRLCurrency(pack.fullPrice)}}
+                </div>
+                <div>
+                  Ida <br> {{pack.outboundDate | date:"dd/MM/yy"}}
+                </div>
+                <div>
+                  Volta <br> {{pack.inboundDate | date:"dd/MM/yy"}}
+                </div>
+              </div>
+            </div>
+
+            <!-- <div>
+              ID - {{pack.flightId}}
+            </div>
+            <div>
+              Destino - {{findCityByIataCode(pack.arrivalAirport)}}
+            </div>
+            <div>
+              Preço do pacote - {{getBRLCurrency(pack.fullPrice)}}
+            </div>
+            <div>
+              Ida - {{pack.outboundDate | date:"dd/MM/yy"}}
+            </div>
+            <div>
+              Volta - {{pack.inboundDate | date:"dd/MM/yy"}}
+            </div>
+            <img [src]="pack.imageUrl" style="border-radius: 0.5em;"> -->
+          </ng-template>
+        </p-carousel>
+        <!-- <p-carousel [value]="packs" [numVisible]="3">
+          <ng-template let-pack pTemplate="item">
+            <div>
+              ID - {{pack.flightId}}
+            </div>
+            <div>
+              Destino - {{findCityByIataCode(pack.arrivalAirport)}}
+            </div>
+            <div>
+              Preço do pacote - {{getBRLCurrency(pack.fullPrice)}}
+            </div>
+            <div>
+              Ida - {{pack.outboundDate | date:"dd/MM/yy"}}
+            </div>
+            <div>
+              Volta - {{pack.inboundDate | date:"dd/MM/yy"}}
+            </div>
+          </ng-template>
+        </p-carousel>
+        <p-carousel [value]="flights" [numVisible]="3">
+          <ng-template let-flight pTemplate="item">
+            <div>
+              ID - {{flight.id}}
+            </div>
+            <div>
+              Companhia - {{flight.company | uppercase}}
+            </div>
+            <div>
+              Partida - {{findCityByIataCode(flight.departureAirport)}}
+            </div>
+            <div>
+              Destino - {{findCityByIataCode(flight.arrivalAirport)}}
+            </div>
+            <div>
+              Preço - {{getBRLCurrency(flight.price)}}
+            </div>
+            <div>
+              Ida - {{flight.outboundDate | date:"dd/MM/yy"}}
+            </div>
+            <div>
+              Volta - {{flight.inboundDate | date:"dd/MM/yy"}}
+            </div>
+          </ng-template>
+        </p-carousel>
+        <p-carousel [value]="hotels" [numVisible]="3">
+          <ng-template let-hotel pTemplate="item">
+            <div>
+              ID - {{hotel.id}}
+            </div>
+            <div>
+              Hotel - {{hotel.name}}
+            </div>
+            <div>
+              Cidade - {{findCityByIataCode(hotel.iata)}}
+            </div>
+            <div>
+              Preço - {{getBRLCurrency(hotel.pricePerNight)}}
+            </div>
+          </ng-template>
+        </p-carousel>
+        <p-carousel [value]="iataCodes" [numVisible]="3">
+          <ng-template let-iata pTemplate="item">
+            <div>
+              ID - {{iata.id}}
+            </div>
+            <div>
+              Cidade - {{iata.city}}
+            </div>
+          </ng-template>
+        </p-carousel> -->
+      </div>
+    </div>
+  </div>
+</div>
